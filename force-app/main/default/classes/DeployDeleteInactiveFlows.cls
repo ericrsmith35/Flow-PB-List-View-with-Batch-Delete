@@ -2,8 +2,9 @@
      * Use the MetadataService and Zippex Classes to build and deploy a
      * DestructiveChanges package to batch delete inactive Flows and Process Builders
      * 
-     * 05/09/20 -   Eric Smith -    Version 1.0
+     * 08/24/20 -   Eric Smith -    Version 1.2     Changed deploy options to run an Apex Test so it will work in Production Orgs
      * 05/29/20 -   Eric Smith -    Version 1.1     Created an Apex-Defined Descriptor Class for the Flow Information
+     * 05/09/20 -   Eric Smith -    Version 1.0
      * 
      * Apex-Defined Variable Descriptor Class:      FlowDatatableDescriptor.cls
      * 
@@ -115,9 +116,11 @@ public with sharing class DeployDeleteInactiveFlows {
         lvDeployOption.performRetrieve = false;
         lvDeployOption.purgeOnDelete = false;
         lvDeployOption.rollbackOnError = true;
-        lvDeployOption.runTests = new String[]{};
+        // lvDeployOption.runTests = new String[]{};
+        lvDeployOption.runTests = new String[]{'DeployDeleteInactiveFlowsTest'};
         lvDeployOption.singlePackage = true;
-        lvDeployOption.testLevel = 'NoTestRun';
+        // lvDeployOption.testLevel = 'NoTestRun';
+        lvDeployOption.testLevel = 'RunSpecifiedTests';
             
         return lvDeployOption;
     }
