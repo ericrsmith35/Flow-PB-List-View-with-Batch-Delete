@@ -132,6 +132,10 @@
                 Integer sizeBlock = recordCount/q_limit + (math.mod(recordCount,q_limit)!=0?1:0);
                 Set<Id> fdvids = new Set<Id>();     // Store all FlowDefinitionView Ids
                 Set<Id> fdvBatch = new Set<Id>();   // Store only current iteration of FlowDefinitionView Ids
+
+                if(Test.isRunningTest()) {
+                    sizeBlock = 1;
+                }                
     
                 for(Integer i=0;i<sizeBlock;i++){
                     for(FlowDefinitionView fd : [
