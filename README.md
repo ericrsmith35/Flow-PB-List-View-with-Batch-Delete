@@ -1,5 +1,5 @@
-Flow & Process Builder List View with Batch Delete
-==================================================
+Flow & Process Builder List View with Batch Delete - 09/11/20 - v1.2  
+====================================================================
 
 <a href="https://githubsfdeploy.herokuapp.com">
   <img alt="Deploy to Salesforce"

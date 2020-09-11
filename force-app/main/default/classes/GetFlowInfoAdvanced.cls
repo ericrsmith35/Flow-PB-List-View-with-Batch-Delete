@@ -3,8 +3,9 @@
      * 
      * This component also adds additional fields used in a Custom Object datatable in my Flow List View Flows 
      * 
-     * 05/09/20 -   Eric Smith -    Version 1.0
+     * 09/11/20 -   Eric Smith -    Version 1.2     Changed QUERY_LIMIT in Test mode to reduce change of SOQL 101 errors on installation
      * 05/29/20 -   Eric Smith -    Version 1.1     Created an Apex-Defined Descriptor Class for the Flow Information
+     * 05/09/20 -   Eric Smith -    Version 1.0
      * 
      * Apex-Defined Variable Descriptor Class:      FlowDatatableDesscriptor.cls
      * 
@@ -12,7 +13,7 @@
 
     public with sharing class GetFlowInfoAdvanced {
 
-        Static Final Integer QUERY_LIMIT = 20;                  // Batch size for reading FlowDefinitionView records
+        Static Final Integer QUERY_LIMIT = 20;                 // Batch size for reading FlowDefinitionView records
         Static Final String ACTIVE_THEME = 'slds-theme_info';  // Display theme for Active Flows when displaying both Active & Inactive
  
         // Attributes passed in from the Flow
@@ -120,10 +121,15 @@
                 if(String.isEmpty(upperBoundary)) {
                     upperBoundary = 'Z'.repeat(255);
                 }
-    
+
+                Integer q_limit = QUERY_LIMIT;
+                if(Test.isRunningTest()) {
+                    q_limit = 2;
+                }
+
                 // Set batch size for FlowDefinitionView Query
                 Integer recordCount = [SELECT count() FROM FlowDefinitionView];
-                Integer sizeBlock = recordCount/QUERY_LIMIT + (math.mod(recordCount,QUERY_LIMIT)!=0?1:0);
+                Integer sizeBlock = recordCount/q_limit + (math.mod(recordCount,q_limit)!=0?1:0);
                 Set<Id> fdvids = new Set<Id>();     // Store all FlowDefinitionView Ids
                 Set<Id> fdvBatch = new Set<Id>();   // Store only current iteration of FlowDefinitionView Ids
     
@@ -149,7 +155,7 @@
                         FROM    FlowDefinitionView 
                         WHERE   DurableId NOT IN:fdvids
                         ORDER BY Label ASC 
-                        LIMIT   :QUERY_LIMIT]) {
+                        LIMIT   :q_limit]) {
                         try{
                             fdvids.add(fd.DurableId);            
                             if (lowerBoundary <= fd.ApiName && fd.ApiName <= upperBoundary) {
