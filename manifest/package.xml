@@ -10,8 +10,6 @@
         <members>MetadataService</members>
         <members>MetadataServiceTest</members>
         <members>Puff</members>
-        <members>SObjectController2</members>
-        <members>SObjectController2Test</members>
         <members>TranslateFlowRecords</members>
         <members>TranslateFlowRecordsTest</members>
         <members>Zippex</members>
@@ -48,10 +46,6 @@
         <members>Flow_and_Process_Builder_OneView_Promo</members>
         <members>Flow_and_Process_Builder_Select_with_DELETE</members>
         <name>Flow</name>
-    </types>
-    <types>
-        <members>datatableV2</members>
-        <name>LightningComponentBundle</name>
     </types>
     <types>
         <members>Batch_Delete_Flows</members>
