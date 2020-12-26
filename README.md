@@ -10,5 +10,5 @@ Flow & Process Builder List View with Batch Delete - 12/26/20 - v1.3
   Overview and Instructions
 </a>  
   
-12/26/20 - Eric Smith -   Refactored to use v3 of the Datatable component and the FlowActionsBasePack
+12/26/20 - Eric Smith -   Refactored to use v3 of the Datatable component
   
