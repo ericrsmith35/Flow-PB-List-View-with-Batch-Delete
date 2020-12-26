@@ -1,4 +1,4 @@
-Flow & Process Builder List View with Batch Delete - 09/11/20 - v1.2  
+Flow & Process Builder List View with Batch Delete - 12/26/20 - v1.3  
 ====================================================================
 
 <a href="https://githubsfdeploy.herokuapp.com">
@@ -8,4 +8,7 @@ Flow & Process Builder List View with Batch Delete - 09/11/20 - v1.2
 <br/><br/>
 <a href="https://ericsplayground.wordpress.com/2020/06/11/flow-and-process-builder-list-view-with-batch-delete/">
   Overview and Instructions
-</a>
+</a>  
+  
+12/26/20 - Eric Smith -   Refactored to use v3 of the Datatable component and the FlowActionsBasePack
+  
