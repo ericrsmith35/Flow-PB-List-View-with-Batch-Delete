@@ -10,6 +10,7 @@
         <connector>
             <targetReference>Deletion_Result_Status</targetReference>
         </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>flowRecordString</name>
             <value>
@@ -34,6 +35,7 @@
         <connector>
             <targetReference>Display_Selected_Inactive_Flows</targetReference>
         </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>inputCollection</name>
             <value>
@@ -52,6 +54,7 @@
         <connector>
             <targetReference>Loop_Selected_Flows</targetReference>
         </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>inputString</name>
             <value>
@@ -63,6 +66,7 @@
             <name>outputCollection</name>
         </outputParameters>
     </actionCalls>
+    <apiVersion>49.0</apiVersion>
     <assignments>
         <name>Add_to_Inactive_Flow_Collection</name>
         <label>Add to Inactive Flow Collection</label>
@@ -365,6 +369,12 @@ CASE({!vStatus},
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -422,7 +432,7 @@ CASE({!vStatus},
             <name>DisplayListView</name>
             <dataTypeMappings>
                 <typeName>T</typeName>
-                <typeValue>Account</typeValue>
+                <typeValue>User</typeValue>
             </dataTypeMappings>
             <extensionName>c:datatable</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -498,6 +508,13 @@ CASE({!vStatus},
                     <stringValue>calc(100vh - 180px)</stringValue>
                 </value>
             </inputParameters>
+            <inputParameters>
+                <name>cb_isUserDefinedObject</name>
+                <value>
+                    <stringValue>CB_TRUE</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -548,6 +565,7 @@ CASE({!vStatus},
                     <booleanValue>false</booleanValue>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -555,7 +573,7 @@ CASE({!vStatus},
             <name>ConfirmInactive</name>
             <dataTypeMappings>
                 <typeName>T</typeName>
-                <typeValue>Account</typeValue>
+                <typeValue>User</typeValue>
             </dataTypeMappings>
             <extensionName>c:datatable</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -631,6 +649,13 @@ CASE({!vStatus},
                     <stringValue>calc(100vh - 135px)</stringValue>
                 </value>
             </inputParameters>
+            <inputParameters>
+                <name>cb_isUserDefinedObject</name>
+                <value>
+                    <stringValue>CB_TRUE</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>

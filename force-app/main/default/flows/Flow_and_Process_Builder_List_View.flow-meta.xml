@@ -10,6 +10,7 @@
         <connector>
             <targetReference>Display_Datatable</targetReference>
         </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>lowerBoundary</name>
             <value>
@@ -42,6 +43,7 @@
         </inputParameters>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
+    <apiVersion>49.0</apiVersion>
     <choices>
         <name>Active</name>
         <choiceText>Active</choiceText>
@@ -211,6 +213,12 @@ CASE({!Status},
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -234,7 +242,7 @@ CASE({!Status},
             <name>DisplayDatatable</name>
             <dataTypeMappings>
                 <typeName>T</typeName>
-                <typeValue>Account</typeValue>
+                <typeValue>User</typeValue>
             </dataTypeMappings>
             <extensionName>c:datatable</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -316,6 +324,13 @@ CASE({!Status},
                     <booleanValue>true</booleanValue>
                 </value>
             </inputParameters>
+            <inputParameters>
+                <name>cb_isUserDefinedObject</name>
+                <value>
+                    <stringValue>CB_TRUE</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -388,6 +403,7 @@ CASE({!Status},
                     <booleanValue>false</booleanValue>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
