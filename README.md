@@ -1,4 +1,4 @@
-Flow & Process Builder List View with Batch Delete - 12/26/20 - v1.3  
+Flow & Process Builder List View with Batch Delete - 06/09/21 - v1.4  
 ====================================================================
 
 <a href="https://githubsfdeploy.herokuapp.com">
@@ -10,5 +10,6 @@ Flow & Process Builder List View with Batch Delete - 12/26/20 - v1.3
   Overview and Instructions
 </a>  
   
+06/09/21 - Eric Smith -   Updated Flows to work correctly w/ v3.2 of Datatable
 12/26/20 - Eric Smith -   Refactored to use v3 of the Datatable component
   
