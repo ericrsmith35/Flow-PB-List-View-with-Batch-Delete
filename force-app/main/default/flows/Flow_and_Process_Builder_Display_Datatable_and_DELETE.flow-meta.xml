@@ -66,7 +66,7 @@
             <name>outputCollection</name>
         </outputParameters>
     </actionCalls>
-    <apiVersion>49.0</apiVersion>
+    <apiVersion>51.0</apiVersion>
     <assignments>
         <name>Add_to_Inactive_Flow_Collection</name>
         <label>Add to Inactive Flow Collection</label>

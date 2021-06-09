@@ -57,5 +57,5 @@
         <members>OneViewBanner</members>
         <name>StaticResource</name>
     </types>
-    <version>49.0</version>
+    <version>51.0</version>
 </Package>
