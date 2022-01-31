@@ -4,6 +4,7 @@
         <members>DeployDeleteInactiveFlows</members>
         <members>DeployDeleteInactiveFlowsTest</members>
         <members>FlowDatatableDescriptor</members>
+        <members>FlowDatatableDescriptorTest</members>
         <members>GetFlowInfoAdvanced</members>
         <members>GetFlowInfoAdvancedTest</members>
         <members>HexUtil</members>
